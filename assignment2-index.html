@@ -1,0 +1,77 @@
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <title>Map Navigator Leaftlet 2018</title>
+
+    <!-- leaflet -->
+	<link rel="stylesheet" href="https://npmcdn.com/leaflet@1.0.0-rc.3/dist/leaflet.css" />
+    <script src="https://npmcdn.com/leaflet@1.0.0-rc.3/dist/leaflet.js"></script>
+    
+    <!-- turf -->
+    <script src='https://npmcdn.com/@turf/turf/turf.min.js' defer></script>
+
+    <!-- custom libraries --> 
+    <script src="utils.js"></script>
+    <link rel="stylesheet" href="assignment2-style.css"/>
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/datalegreya" type="text/css"/>
+    <script src="assignment2-script.js" defer></script>
+</head>
+
+<body>
+
+<h1>Assignment. Leaflet.js, Turf.js, event handling, and HTML DOM Tables, GeoLocation API</h1>
+
+<header>
+    <h2>Input parameters</h1>
+</header>
+<main>
+    <section>
+        <div>
+                <label>Bounding box:</label><span>Campus UJI</span>
+                <button id="btn-bbox" type="button" onclick="addPoly()">View on map</button>
+        </div>
+        
+        <div>
+                <label>Number of points:</label> <input id="num" type="number">
+                <button id="btn-points" type="button" onclick="fillTable()">Generate random points!</button>
+        </div>
+        
+    </section>
+
+    <section>
+        <button id="btn-myposition" type="button" onclick="getMyPosition()">Where I am?</button>
+        <span id="my-lat" class="hide"></span>
+        <span id="my-lon" class="hide"></span>
+    </section>
+
+
+    <br><br>
+
+    <section id="table-section">
+        <div id="table-div" class="hide">
+        <table id="tbl">
+            <thead>
+                <tr>
+                    <th>Longitud</th>
+                    <th>Latitud</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+    
+            </tbody>    
+        </table>
+        </div>
+    </section>
+
+    <section id="map-section">
+        <div id="map-div">  </div>
+            <script>leafletfInitMap('map-div');</script>
+    </section>
+</main> 
+
+
+
+</body>
+</html>
