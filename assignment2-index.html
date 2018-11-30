@@ -19,20 +19,19 @@
 </head>
 
 <body>
-
-<h1>Assignment. Leaflet.js, Turf.js, event handling, and HTML DOM Tables, GeoLocation API</h1>
-
 <header>
+    <h1>Assignment. Leaflet.js, Turf.js, event handling, and HTML DOM Tables, GeoLocation API</h1>
     <h2>Input parameters</h1>
 </header>
 <main>
+        <div id="controls">
     <section>
-        <div>
+        <div id="tagFunctions">
                 <label>Bounding box:</label><span>Campus UJI</span>
                 <button id="btn-bbox" type="button" onclick="handleBoundingBox() ">View on map</button>
         </div>
         
-        <div>
+        <div id="tagFunctions">
                 <label>Number of points:</label> <input id="num" type="number">
                 <button id="btn-points" type="button" onclick="handleRamdomPoints()">Generate random points!</button>
         </div>
@@ -64,11 +63,14 @@
         </table>
         </div>
     </section>
+</div>
 
+<div id="rightSide">
     <section id="map-section">
         <div id="map-div">  </div>
             <script>leafletfInitMap('map-div');</script>
     </section>
+</div>
 </main> 
 
 

@@ -1,15 +1,19 @@
 :root{
-    --main-body-color:white;
-    --main-button-color:  #5DADE2;
+    --main-body-color:#F2F2F2;
+    --accent-dark:#282425;
+    --accent-medium:#D8A247;
+    --accent-neutral:#8B6D34;
+    --accent-light:#DABD83;
 }
 body{
-    /*font-family: 'DatalegreyaDot'; */
+    font-family: "Century Gothic", AppleGothic, sans-serif;
     align-items: center;
     background-color: var(--main-body-color); 
     background-repeat: repeat;
     background-position:center;
     /*background-image: linear-gradient(141deg, #e4d1d1 0%, #b9b0b0 61%, #77a8a8 85%);*/
-    
+    min-height: 100vh;
+
 }
 
 h1,h2{
@@ -29,44 +33,72 @@ h2{
 button{
     padding-bottom: 2%;
     /*Added styles*/
-    font-family: 'DatalegreyaDot'; 
-    background-color:  var(--main-button-color);
+    font-family: "Century Gothic", AppleGothic, sans-serif;
+    background-color:  var(--accent-medium);
     color:white;
-    border: 1px solid var(--main-button-color);
+    border: 1px solid var(--accent-medium);
     border-radius: 4px;
     margin: auto;
     padding: 10px;
-    box-shadow: rgba(0, 0, 0, 0.4);
+    box-shadow:  var(--accent-dark);
     text-align: center;
 }
 
 button:hover{
  color: white;
- background-color: black; 
+ background-color:   var(--accent-dark); 
 }
 
 button:disabled{
     background-color: darkgray;
 }
 
+#controls{
+    float: left;
+    width: 50%,
+}
 
-/**Table Section Syle**/
+#rightSide{
+    float:right;
+    width: 50%,
+}
+
+#tagFunctions{
+    padding: 3% 3% 3% 3%;
+}
+
+#btn-myposition{
+    align-self: center;
+}
+
+/** Map Section Style **/
+#map-div{
+    height:60%;
+    }
+
+#map-section{
+    margin: 0 0 0 auto;
+    width: 60%;
+    float:right;
+}
+
+
+/**Table Section Style**/
 #table-section{
     float: left;
     margin: 0 0 auto 0;
 }
 
-th, td {
-    border-bottom: 1px solid #ddd;
+table{
+    background-color: var(--main-body-color);
+    border-bottom-color: #282425;
+    color: #282425;
+    font-family: "Century Gothic", AppleGothic, sans-serif;
+    font-size: 15px;
+    width: 400px;
+    text-align: center;
 }
 
-/** Map Section Style **/
-#map-div{
-    height:50%;
-    }
-
-#map-section{
-    margin: 0 0 0 auto;
-    width: 50%;
-    float:right;
+th, td {
+    border-bottom: 1px solid #ddd;
 }

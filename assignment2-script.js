@@ -6,7 +6,7 @@ function getBox(){
     return [-0.07947921752929688, 39.98619605209568, -0.04978179931640625, 40.00000497268461];
 }
 
-function getCurrentPositionMoreAccuerate(){
+function getCurrentPositionMoreAccurate(){
 
     map.locate({setView: true, watch: true})
     .on('locationfound', function(e){
@@ -60,17 +60,14 @@ function updateTable(points) {
  }
 
  function deleteTableRows() {
-         //Clean table and existing rows
          let actual=document.getElementById('tbl').getElementsByTagName('tbody')[0]['rows']['length'];
    
          if(actual>0){
                  document.getElementById('tbl').getElementsByTagName('tbody')[0].innerHTML="";
-                 //WE NEED TO CLEAN THE MAP!!!!!!
-                 //map.clearLayers();
          }
  }
 
- 
+
 
  function createRow(id, point) {
     let tablePoints=document.getElementById('tbl').getElementsByTagName('tbody')[0];
@@ -81,8 +78,8 @@ function updateTable(points) {
     lat.innerHTML = point[id]['geometry']['coordinates'][0].toFixed(5);
     lon.innerHTML = point[id]['geometry']['coordinates'][1].toFixed(5);
 
-    var btn = document.createElement("button");
-    var title = document.createTextNode("View");
+    let btn = document.createElement("button");
+    let title = document.createTextNode("View");
     btn.appendChild(title);
     btn.setAttribute("id", id);
     btn.setAttribute("onclick",'handleView(this.id)');
@@ -101,8 +98,8 @@ Desc: Show the point (the one in the same row than the button) on the map, hide 
    
    let button = points[2];
 
-   var btn = document.createElement("button");
-   var title = document.createTextNode("Distance");
+   let btn = document.createElement("button");
+   let title = document.createTextNode("Distance");
    btn.appendChild(title);
    btn.setAttribute("id", rowId);
    btn.setAttribute("onclick",'handleDistance(this.id)');

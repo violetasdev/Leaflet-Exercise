@@ -13,8 +13,8 @@ function leafletfInitMap(mapId){
         attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> — Map data © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
         subdomains: 'abcd',
         minZoom: 0,
-        maxZoom: 20,
-        ext: 'png'
+        maxZoom: 15,
+        ext: 'png',
     });
 
     // add the tiles to the map
@@ -22,6 +22,12 @@ function leafletfInitMap(mapId){
 
     //disable scroll wheel zoom 
     map.scrollWheelZoom.disable();
+    map.touchZoom.disable();
+    map.doubleClickZoom.disable();
+    map.scrollWheelZoom.disable();
+    map.boxZoom.disable();
+    map.zoomControl.disable();
+    
 }
 
 /* 
@@ -35,18 +41,18 @@ function leafletAddPointToMap(lon, lat, isMyPosition) {
         var defaultMarkerOptions = {
             layer:'random',
             radius: 4,
-            fillColor: "#ff7800",
-            color: "#000",
+            fillColor: "#8B6D34",
+            color: "#282425",
             weight: 1,
             opacity: 1,
             fillOpacity: 0.8
         };
 
         var myPositionMarkerOptions = {
-            layer:'random',
+            glayer:"points",
             radius: 4,
-            fillColor: "green",
-            color: "#000",
+            fillColor: "#8B3F34",
+            color: "#282425",
             weight: 1,
             opacity: 1,
             fillOpacity: 0.8
@@ -78,7 +84,7 @@ function leafletAddLineToMap(pointFrom, pointTo) {
 
     // add a marker to the map
     var line = turf.lineString(latlngs);
-    L.geoJson(line, {color:"red"}).addTo(map);
+    L.geoJson(line, {color:"#DA6C6F",glayer:"lines"}).addTo(map);
 }
 
 /* 
@@ -86,7 +92,7 @@ Add a polygon to the map by passing a boundig box declaration as input parameter
 */
 function leafletAddPolygonToMap(bbox) {
     var polygon = turfToPolygon(bbox);
-    L.geoJson(polygon, {color:"blue"}).addTo(map);
+    L.geoJson(polygon, {color:"#DABD83",glayer:"polygon"}).addTo(map);
 }
 
 /* 
@@ -118,4 +124,21 @@ function turfDistance(pointFrom, pointTo) {
   
     var dist = turf.distance(pointFrom, pointTo, options);
     return parseFloat(dist).toFixed(2);
+  }
+
+
+
+  /*Custom*/
+  /*
+Clean the Layers for new selection of points
+  */
+
+  function deleteFeatures(){
+     map.eachLayer(function (layer) {    
+    if(layer.options['pointToLayer'] ||layer.options['glayer']=='lines' ){
+        map.removeLayer(layer);
+    }
+    });   
+
+    myPosition=undefined;
   }
