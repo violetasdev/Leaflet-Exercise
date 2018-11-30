@@ -33,6 +33,7 @@ function leafletAddPointToMap(lon, lat, isMyPosition) {
     if (map) {
 
         var defaultMarkerOptions = {
+            layer:'random',
             radius: 4,
             fillColor: "#ff7800",
             color: "#000",
@@ -42,6 +43,7 @@ function leafletAddPointToMap(lon, lat, isMyPosition) {
         };
 
         var myPositionMarkerOptions = {
+            layer:'random',
             radius: 4,
             fillColor: "green",
             color: "#000",
@@ -70,8 +72,8 @@ function leafletAddLineToMap(pointFrom, pointTo) {
 
     // define coordinates for line
     var latlngs = [
-        pointFrom.geometry.coordinates,
-        pointTo.geometry.coordinates
+        pointFrom,
+        pointTo
     ];
 
     // add a marker to the map
