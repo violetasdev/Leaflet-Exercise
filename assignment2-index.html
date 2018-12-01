@@ -25,29 +25,28 @@
 </header>
 <main>
         <div id="controls">
-    <section>
-        <div id="tagFunctions">
-                <label>Bounding box:</label><span>Campus UJI</span>
-                <button id="btn-bbox" type="button" onclick="handleBoundingBox() ">View on map</button>
-        </div>
+
+                <section>
+                    <div id="tagFunctions">
+                        <button id="btn-myposition" type="button" onclick="getMyPosition()">Where I am?</button>
+                        <span id="my-lat" class="hide"></span>
+                        <span id="my-lon" class="hide"></span>
+                    </div>
+                </section>
+                
+                <section>
+                    <div id="tagFunctions">
+                        <label>Bounding box: </label><span>Campus UJI</span>
+                        <button id="btn-bbox" type="button" onclick="handleBoundingBox() ">View on map</button>
+                    </div>
         
-        <div id="tagFunctions">
-                <label>Number of points:</label> <input id="num" type="number">
-                <button id="btn-points" type="button" onclick="handleRamdomPoints()">Generate random points!</button>
-        </div>
-        
-    </section>
+                    <div id="tagFunctions">
+                        <label>Number of points:</label> <input id="num" type="number">
+                        <button id="btn-points" type="button" onclick="handleRamdomPoints()">Generate random points!</button>
+                    </div>
+                </section>
 
     <section>
-        <button id="btn-myposition" type="button" onclick="getMyPosition()">Where I am?</button>
-        <span id="my-lat" class="hide"></span>
-        <span id="my-lon" class="hide"></span>
-    </section>
-
-
-    <br><br>
-
-    <section id="table-section">
         <div id="table-div" class="hide">
         <table id="tbl">
             <thead>
@@ -66,7 +65,7 @@
 </div>
 
 <div id="rightSide">
-    <section id="map-section">
+    <section>
         <div id="map-div">  </div>
             <script>leafletfInitMap('map-div');</script>
     </section>

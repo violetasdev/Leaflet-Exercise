@@ -1,5 +1,6 @@
 :root{
     --main-body-color:#F2F2F2;
+    --sec-body-color:white;
     --accent-dark:#282425;
     --accent-medium:#D8A247;
     --accent-neutral:#8B6D34;
@@ -8,11 +9,10 @@
 body{
     font-family: "Century Gothic", AppleGothic, sans-serif;
     align-items: center;
-    background-color: var(--main-body-color); 
+    background-color: var(--sec-body-color); 
     background-repeat: repeat;
     background-position:center;
     /*background-image: linear-gradient(141deg, #e4d1d1 0%, #b9b0b0 61%, #77a8a8 85%);*/
-    min-height: 100vh;
 
 }
 
@@ -55,16 +55,19 @@ button:disabled{
 
 #controls{
     float: left;
-    width: 50%,
+    width: auto;
+    width: 600px;
 }
 
 #rightSide{
+    margin: 0 0 0 auto;
+    width: 50%;
     float:right;
-    width: 50%,
 }
 
 #tagFunctions{
     padding: 3% 3% 3% 3%;
+    width: auto;
 }
 
 #btn-myposition{
@@ -76,17 +79,11 @@ button:disabled{
     height:60%;
     }
 
-#map-section{
-    margin: 0 0 0 auto;
-    width: 60%;
-    float:right;
-}
-
-
 /**Table Section Style**/
-#table-section{
+#table-div{
     float: left;
     margin: 0 0 auto 0;
+    padding: 3%
 }
 
 table{
