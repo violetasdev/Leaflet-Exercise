@@ -28,15 +28,15 @@ header{
 h1{
     text-align: center;
     font-family: 'DatalegreyaDot'; 
-    color:black;
-    text-shadow: 2px 2px 10px black ;
+    color: var(--accent-medium);
+    text-shadow: 2px 2px 10px  var(--accent-dark);
 }
 
 
 h2{
     text-align: left;
     font-family: 'DatalegreyaDot'; 
-    color:darkgray;
+    color:black;
     text-shadow: 1px 1px 10px black ;
 }
 
