@@ -3,6 +3,8 @@
 <head>
     <meta charset="utf-8"/>
     <title>Map Navigator Leaftlet 2018</title>
+    <link rel="icon" href="flag.png">
+
 
     <!-- leaflet -->
 	<link rel="stylesheet" href="https://npmcdn.com/leaflet@1.0.0-rc.3/dist/leaflet.css" />
@@ -20,20 +22,13 @@
 
 <body>
 <header>
-    <h1>Assignment. Leaflet.js, Turf.js, event handling, and HTML DOM Tables, GeoLocation API</h1>
-    <h2>Input parameters</h1>
+   
 </header>
 <main>
         <div id="controls">
-
-                <section>
-                    <div id="tagFunctions">
-                        <button id="btn-myposition" type="button" onclick="getMyPosition()">Where I am?</button>
-                        <span id="my-lat" class="hide"></span>
-                        <span id="my-lon" class="hide"></span>
-                    </div>
-                </section>
-                
+            <h1>Programming II Final Assigment</h1>
+                <h2>Leaflet.js, Turf.js, event handling, and HTML DOM Tables, GeoLocation API</h1>
+                <h2>Input parameters</h1>
                 <section>
                     <div id="tagFunctions">
                         <label>Bounding box: </label><span>Campus UJI</span>
@@ -45,6 +40,14 @@
                         <button id="btn-points" type="button" onclick="handleRamdomPoints()">Generate random points!</button>
                     </div>
                 </section>
+
+                <section>
+                        <div id="tagFunctions">
+                            <button id="btn-myposition" type="button" onclick="getMyPosition()">Where I am?</button>
+                            <span id="my-lat" class="hide"></span>
+                            <span id="my-lon" class="hide"></span>
+                        </div>
+                    </section>
 
     <section>
         <div id="table-div" class="hide">
@@ -71,8 +74,6 @@
     </section>
 </div>
 </main> 
-
-
 
 </body>
 </html>

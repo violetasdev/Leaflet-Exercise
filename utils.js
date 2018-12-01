@@ -9,8 +9,8 @@ function leafletfInitMap(mapId){
     map = L.map(mapId).setView([39.994703663714745, -0.06909370422363281], 14);
 
     // get the stamen toner-lite tiles
-    var Stamen_Toner = L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}.{ext}', {
-        attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> — Map data © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    var Stamen_Toner =  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
         subdomains: 'abcd',
         minZoom: 0,
         maxZoom: 15,
@@ -41,8 +41,8 @@ function leafletAddPointToMap(lon, lat, isMyPosition) {
         var defaultMarkerOptions = {
             layer:'random',
             radius: 4,
-            fillColor: "#8B6D34",
-            color: "#282425",
+            fillColor: "#FFC300",
+            color: " #FFC300",
             weight: 1,
             opacity: 1,
             fillOpacity: 0.8
@@ -51,8 +51,8 @@ function leafletAddPointToMap(lon, lat, isMyPosition) {
         var myPositionMarkerOptions = {
             glayer:"points",
             radius: 4,
-            fillColor: "#8B3F34",
-            color: "#282425",
+            fillColor: "#900C3F",
+            color: "#900C3F",
             weight: 1,
             opacity: 1,
             fillOpacity: 0.8
@@ -84,13 +84,15 @@ function leafletAddLineToMap(pointFrom, pointTo) {
 
     // add a marker to the map
     var line = turf.lineString(latlngs);
-    L.geoJson(line, {color:"#DA6C6F",glayer:"lines"}).addTo(map);
+    L.geoJson(line, {color:"#900C3F",glayer:"lines"}).addTo(map);
 }
 
 /* 
 Add a polygon to the map by passing a boundig box declaration as input parameter. 
 */
 function leafletAddPolygonToMap(bbox) {
+    cleanPolygon();
+
     var polygon = turfToPolygon(bbox);
     L.geoJson(polygon, {color:"#DABD83",glayer:"polygon"}).addTo(map);
 }
@@ -141,4 +143,13 @@ Clean the Layers for new selection of points
     });   
 
     myPosition=undefined;
+  }
+
+  function cleanPolygon(){
+    map.eachLayer(function (layer) {    
+        if(layer.options['glayer']=='polygon' ){
+            map.removeLayer(layer);
+        }
+        });   
+    
   }
