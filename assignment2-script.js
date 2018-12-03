@@ -92,13 +92,7 @@ function createRow(id, point) {
     lat.innerHTML = point[id]['geometry']['coordinates'][0].toFixed(5);
     lon.innerHTML = point[id]['geometry']['coordinates'][1].toFixed(5);
 
-    let btn = document.createElement("button");
-    let title = document.createTextNode("View");
-    btn.appendChild(title);
-    btn.setAttribute("id", id);
-    btn.setAttribute("onclick", 'handleView(this.id)');
-
-    button.appendChild(btn);
+    createButton(button,'View',id,'handleView');
 }
 
 /*
@@ -112,13 +106,19 @@ function handleView(rowId) {
 
     let button = points[2];
 
+    createButton(button,'Distance',rowId,'handleDistance');
+   
+}
+
+function createButton(button,label,rowId, trigger){
     let btn = document.createElement("button");
-    let title = document.createTextNode("Distance");
+    let title = document.createTextNode(label);
     btn.appendChild(title);
     btn.setAttribute("id", rowId);
-    btn.setAttribute("onclick", 'handleDistance(this.id)');
+    btn.setAttribute("onclick", trigger+'(this.id)');
 
     button.appendChild(btn);
+
 }
 
 
