@@ -39,7 +39,7 @@ function leafletAddPointToMap(lon, lat, isMyPosition) {
     if (map) {
 
         var defaultMarkerOptions = {
-            layer:'random',
+            glayer:'random',
             radius: 4,
             fillColor: "#FFC300",
             color: " #FFC300",
@@ -51,8 +51,8 @@ function leafletAddPointToMap(lon, lat, isMyPosition) {
         var myPositionMarkerOptions = {
             glayer:"points",
             radius: 4,
-            fillColor: "#900C3F",
-            color: "#900C3F",
+            fillColor: "#16a085",
+            color: "#16a085",
             weight: 1,
             opacity: 1,
             fillOpacity: 0.8
@@ -136,13 +136,13 @@ Clean the Layers for new selection of points
   */
 
   function deleteFeatures(){
-     map.eachLayer(function (layer) {    
-    if(layer.options['pointToLayer'] ||layer.options['glayer']=='lines' ){
+     map.eachLayer(function (layer) {
+    if(layer.defaultOptions){
+        if(layer.defaultOptions['glayer']=='random' ||layer.options['glayer']=='lines'){
         map.removeLayer(layer);
+        }
     }
     });   
-
-    myPosition=undefined;
   }
 
   function cleanPolygon(){

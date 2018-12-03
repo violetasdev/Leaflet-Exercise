@@ -26,7 +26,7 @@ function getMyPosition() {
     if (myPosition == undefined) {
         navigator.geolocation.getCurrentPosition(viewMyPositionInMap, displayError);
     } else {
-        alert('You already know where you are. Check the plum dot!');
+        alert('You already know where you are. Check the map!');
     }
 
 }
@@ -116,9 +116,7 @@ function createButton(button,label,rowId, trigger){
     btn.appendChild(title);
     btn.setAttribute("id", rowId);
     btn.setAttribute("onclick", trigger+'(this.id)');
-
     button.appendChild(btn);
-
 }
 
 
