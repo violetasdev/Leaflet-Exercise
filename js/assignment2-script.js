@@ -6,22 +6,6 @@ function getBox() {
     return [-0.07947921752929688, 39.98619605209568, -0.04978179931640625, 40.00000497268461];
 }
 
-function getCurrentPositionMoreAccurate() {
-
-
-    map.locate({ setView: true, watch: true })
-        .on('locationfound', function (e) {
-            currentPosition = [e.longitude, e.latitude];
-            viewMyPositionInMap(currentPosition);
-        })
-        .on('locationerror', function (e) {
-            displayError('permissionDenied');
-        });
-
-
-    return currentPosition;
-}
-
 function getMyPosition() {
     if (myPosition == undefined) {
         navigator.geolocation.getCurrentPosition(viewMyPositionInMap, displayError);
@@ -154,8 +138,5 @@ function handleDistance(rowId) {
 
         let button = points[2];
         button.innerHTML = distance + ' km';
-
-
     }
-
 }

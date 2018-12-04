@@ -1,3 +1,4 @@
+/*I change my mind a lot regarding colors, so it's better for me to create global variables */
 :root{
     --main-body-color:#F2F2F2;
     --sec-body-color:white;
@@ -78,7 +79,7 @@ button:disabled{
 }
 
 #tagFunctions{
-    padding: 3% 3% 3% 3%;
+    padding: 3%;
     width: auto;
 }
 
